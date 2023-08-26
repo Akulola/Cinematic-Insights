@@ -10,7 +10,7 @@ function Header({ user, onLogout }) {
   return (
     <header>
       <h1>
-        <Link to="/">Lorem Blogum</Link>
+        <Link to="/">Cinematic Insights</Link>
       </h1>
       {user ? (
         <div>

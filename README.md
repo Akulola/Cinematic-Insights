@@ -1,85 +1,48 @@
-# Authenticating Users Lab
+# Cinematic Insights
 
-## Learning Goals
+Welcome to Cinematic Insights, an app that explores the diverse and fascinating world of filmmaking. This application provides a platform for sharing articles that delve into various aspects of cinema, from visual effects to movie soundtracks, film editing to costume design, and much more.
 
-- Use the session hash to log in a user
+## Features
 
-## Introduction
+- Read insightful articles written by film enthusiasts about different topics related to filmmaking.
+- Explore articles that cover a wide range of subjects within the cinematic world.
+- Learn about the history, techniques, and evolution of various aspects of filmmaking.
+- Engage with fellow movie lovers through discussions and comments on articles.
 
-In this lab, we'll continue working on the blog site and set up a basic login
-feature.
+## Getting Started
 
-There is some starter code in place for a Rails API backend and a React frontend.
-To get set up, run:
+To get started with the Cinematic Insights app, follow these steps:
 
-```console
-$ bundle install
-$ rails db:migrate db:seed
-$ npm install --prefix client
-```
+1. Clone this repository to your local machine.
+2. Navigate to the project directory: `cd cinematic-insights`.
+3. Install the required gems: `bundle install`.
+4. Set up the database: `rails db:create && rails db:migrate`.
+5. Seed the database with sample data: `rails db:seed`.
+6. Start the Rails server: `rails server`.
+7. Open your web browser and navigate to `http://localhost:3000`.
 
-You can work on this lab by running the tests with `learn test`. It will also be
-helpful to see what's happening during the request/response cycle by running the
-app in the browser. You can run the Rails server with:
+## Usage
 
-```console
-$ rails s
-```
+- Browse the list of articles on the homepage.
+- Click on an article to read its full content.
+- Leave comments on articles to share your thoughts and insights.
+- Engage in discussions with other users by responding to comments.
 
-And you can run React in another terminal with:
+## Contributing
 
-```console
-$ npm start --prefix client
-```
+If you'd like to contribute to the Cinematic Insights app, follow these steps:
 
-You don't have to make any changes to the React code to get this lab working.
+1. Fork the repository.
+2. Create a new branch for your feature: `git checkout -b feature-name`.
+3. Make your changes and commit them: `git commit -am 'Add new feature'`.
+4. Push the changes to your forked repository: `git push origin feature-name`.
+5. Create a pull request detailing your changes.
 
-## Instructions
+## Credits
 
-For our basic login feature, we'll need the following functionality:
+- Created by Group 7
 
-- A user can log in by providing their username in a form
-- A user can log out
-- A user can remain logged in, even after refreshing the page
 
-We'll need to create the routes and controller methods to handle each of these features. Let's get started!
 
-### Sessions
 
-- Generate these routes:
-
-  - `POST /login`: run the `SessionsController#create` method
-  - `DELETE /logout`: run the `SessionsController#destroy` method
-
-- Create a sessions controller.
-
-  - **Note:** If you use the generators to generate your controllers, be sure to
-    pass the `--no-test-framework` flag to avoid generating unneeded files:
-    `rails g controller Sessions --no-test-framework`
-
-- Make a `SessionsController#create` method. It should:
-
-  - Find a user in the database using the username from `params`
-  - Save the user's ID to the session hash
-  - Return the user as a JSON object
-
-- Make a `SessionsController#destroy` method. It should:
-
-  - Remove the user ID from the session hash
-  - Return an empty response with a 204 No Content status code
-
-### Users
-
-- Generate these routes:
-
-  - `GET /me`: run the `UsersController#show` method
-
-- Create a users controller.
-
-  - **Note:** If you use the generators to generate your controllers, be sure to
-    pass the `--no-test-framework` flag to avoid generating unneeded files:
-    `rails g controller Users --no-test-framework`
-
-- Make a `UsersController#show` method. It should:
-  - Find a user in the database using the user id from the session hash
-  - Return the user as a JSON object
+Thank you for using Cinematic Insights!
